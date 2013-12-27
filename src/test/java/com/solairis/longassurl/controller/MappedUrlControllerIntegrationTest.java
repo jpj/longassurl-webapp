@@ -6,7 +6,6 @@
 
 package com.solairis.longassurl.controller;
 
-import static org.hamcrest.CoreMatchers.is;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,7 +39,7 @@ public class MappedUrlControllerIntegrationTest {
     public void verifyRequestReturnsGoogleDotCom() throws Exception {
         this.mockMvc.perform(get("/mappedurl/whatever"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("url", is("http://google.com")));
+                .andExpect(jsonPath("url").value("http://google.com"));
     }
     
 }
