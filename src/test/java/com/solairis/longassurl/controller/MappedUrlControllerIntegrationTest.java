@@ -39,7 +39,8 @@ public class MappedUrlControllerIntegrationTest {
     public void verifyRequestReturnsGoogleDotCom() throws Exception {
         this.mockMvc.perform(get("/mappedurl/whatever"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("url").value("http://google.com"));
+                .andExpect(jsonPath("url").value("http://google.com"))
+                .andExpect(jsonPath("key").value("whatever"));
     }
     
 }
