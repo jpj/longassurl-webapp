@@ -9,7 +9,6 @@ package com.solairis.longassurl.controller;
 import com.solairis.longassurl.entity.MappedUrl;
 import com.solairis.longassurl.service.MappedUrlService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +30,7 @@ public class MappedUrlController {
         this.mappedUrlService = mappedUrlService;
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public MappedUrl findOne(@PathVariable("id") String key) {
         return this.mappedUrlService.findOne(key);
