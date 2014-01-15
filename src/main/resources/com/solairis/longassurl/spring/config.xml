@@ -16,6 +16,13 @@
         <property name="favorPathExtension" value="false"/>
     </bean>
     
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    
+    <mvc:view-controller path="/" view-name="app"/>
+    
     <bean id="mappedUrlService" class="com.solairis.longassurl.service.impl.MappedUrlServiceAlwaysReturnGoogleDotCom">
         
     </bean>
